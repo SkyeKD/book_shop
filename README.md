@@ -1,4 +1,5 @@
-# **USF-CS686-DevOps-Assignment4**
+# **book_shop**
+This repo works as source repo for the midterm of DevOps.
 This repository use docker to containerize the following full-stack CRUD application:  
 🔗 [crud-react-node-mySQL-go](https://github.com/Norbert305/crud-react-node-mySQL-go)
 ---
