@@ -1,15 +1,9 @@
 -- Ensure the database exists
-CREATE DATABASE IF NOT EXISTS mydatabase;
-USE mydatabase;
+CREATE DATABASE IF NOT EXISTS bookshop;
+USE bookshop;
 
--- Ensure root user has full access (important for fixing auth issues)
-ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'rootpassword';
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'rootpassword';
-FLUSH PRIVILEGES;
-
--- Create a non-root user for application access
-CREATE USER IF NOT EXISTS 'devuser'@'%' IDENTIFIED BY 'devpassword';
-GRANT ALL PRIVILEGES ON mydatabase.* TO 'devuser'@'%';
+-- Grant privileges to the RDS admin user (DO NOT use IDENTIFIED BY for existing users)
+GRANT ALL PRIVILEGES ON bookshop.* TO 'admin'@'%';
 FLUSH PRIVILEGES;
 
 -- Create the `books` table if it does not exist

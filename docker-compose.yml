@@ -8,14 +8,9 @@ services:
     depends_on:
       db:
         condition: service_healthy
-    environment:
-      DB_HOST: db
-      DB_PORT: 3306
-      DB_USER: root
-      DB_PASSWORD: rootpassword
-      DB_NAME: mydatabase
-      DIALECT: mysql
-      PORT: 8800
+    env_file:
+      - ./backend/.env 
+
 
   frontend:
     build: ./frontend
@@ -28,16 +23,16 @@ services:
     command: ["npm", "run", "dev"]
 
   db:
-    image: mysql:5.7 
+    image: mysql:8.0
     platform: linux/amd64 
+    container_name: bookshop-db
     restart: always
     command: --default-authentication-plugin=mysql_native_password
-    environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: mydatabase
-      MYSQL_USER: devuser  # Regular user (cannot be "root")
-      MYSQL_PASSWORD: devpassword
-      # MYSQL_USER: root
+
+   
+    env_file:
+      - ./backend/.env
+
     ports:
       - "3308:3306"
     healthcheck:

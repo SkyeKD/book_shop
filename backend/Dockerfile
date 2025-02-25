@@ -9,7 +9,7 @@ COPY package.json package-lock.json ./
 
 # Install dependencies
 RUN npm install
-
+RUN apt-get update && apt-get install -y default-mysql-client
 # Install dependencies, including nodemon globally
 # RUN npm install -g nodemon && npm install
 
