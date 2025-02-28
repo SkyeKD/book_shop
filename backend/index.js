@@ -7,7 +7,7 @@ import mysql from "mysql2";
 dotenv.config(); 
 
 const app = express();
-const PORT = process.env.PORT || 8800;
+const PORT = 8800;
 
 app.use(express.json()); 
 app.use(cors());
@@ -18,7 +18,7 @@ const db = mysql.createConnection({
   user: process.env.DB_USER || "root",
   password: process.env.DB_PASSWORD || "rootpassword",
   database: process.env.DB_NAME || "bookshop",
-  port: process.env.DB_PORT || 3307
+  port: process.env.DB_PORT || 3306
 });
 
 
