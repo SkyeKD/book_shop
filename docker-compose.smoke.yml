@@ -5,9 +5,7 @@ services:
     build: ./backend
     ports:
       - "8800:8800"
-    depends_on:
-      db:
-        condition: service_healthy
+
     # environment:
     #   DB_HOST: db
     #   DB_USER: root
@@ -15,9 +13,12 @@ services:
     #   DB_NAME: bookshop
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8800/health"]
-      interval: 10s
-      retries: 3
-      start_period: 5s
+      interval: 15s
+      retries: 5
+      timeout: 10s
+    depends_on:
+      db:
+        condition: service_healthy
 
   frontend:
     build: ./frontend
