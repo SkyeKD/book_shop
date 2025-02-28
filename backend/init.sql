@@ -13,8 +13,12 @@ USE bookshop;
 ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'rootpassword';
 FLUSH PRIVILEGES;
 
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'rootpassword' WITH GRANT OPTION;
-FLUSH PRIVILEGES;
+-- GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'rootpassword' WITH GRANT OPTION;
+-- FLUSH PRIVILEGES;
+
+-- CREATE USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'rootpassword';
+-- GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
+-- FLUSH PRIVILEGES;
 
 -- Create the `books` table if it does not exist
 -- CREATE TABLE IF NOT EXISTS books (
