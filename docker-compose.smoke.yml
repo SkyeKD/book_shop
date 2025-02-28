@@ -17,6 +17,7 @@ services:
       - backend
     volumes:
       - ./frontend:/app
+      - /app/node_modules 
     command: ["npm", "run", "dev"]
 
   db:
@@ -25,7 +26,7 @@ services:
     environment:
 
       MYSQL_ROOT_PASSWORD: rootpassword  
-      MYSQL_DATABASE: test
+      MYSQL_DATABASE: bookshop
       MYSQL_USER: devuser                 
       MYSQL_PASSWORD: devpassword   
       
