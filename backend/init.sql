@@ -7,7 +7,7 @@ GRANT ALL PRIVILEGES ON bookshop.* TO 'admin'@'%';
 FLUSH PRIVILEGES;
 
 CREATE USER 'devuser'@'%' IDENTIFIED BY 'devpassword';
-GRANT ALL PRIVILEGES ON test.* TO 'devuser'@'%';
+GRANT ALL PRIVILEGES ON bookshop.* TO 'devuser'@'%';
 FLUSH PRIVILEGES;
 
 -- Create the `books` table if it does not exist
