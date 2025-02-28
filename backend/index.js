@@ -18,6 +18,7 @@ const db = mysql.createConnection({
   user: process.env.DB_USER || "root",
   password: process.env.DB_PASSWORD || "rootpassword",
   database: process.env.DB_NAME || "bookshop",
+  port: process.env.DB_PORT || 3307
 });
 
 
