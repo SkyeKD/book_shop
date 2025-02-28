@@ -49,7 +49,7 @@ services:
     #   bash -c "docker-entrypoint.sh mysqld & sleep 10 && 
     #   mysql -u root -prootpassword test < /docker-entrypoint-initdb.d/init.sql && wait"
     ports:
-      - 3306:3306
+      - 3307:3306
     healthcheck:
       # test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "--password=rootpassword"]
