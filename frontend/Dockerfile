@@ -7,7 +7,8 @@ WORKDIR /app
 # Copy package files and install dependencies
 COPY package.json package-lock.json ./
 # RUN npm install
-RUN rm -rf node_modules package-lock.json && npm install --force
+# RUN rm -rf node_modules package-lock.json && npm install --force
+RUN rm -rf node_modules package-lock.json && npm install --legacy-peer-deps
 
 # Fix permission issues
 # RUN chmod +x node_modules/.bin/vite
