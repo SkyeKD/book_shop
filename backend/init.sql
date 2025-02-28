@@ -2,12 +2,18 @@
 CREATE DATABASE IF NOT EXISTS bookshop;
 USE bookshop;
 
-Grant privileges to the RDS admin user (DO NOT use IDENTIFIED BY for existing users)
-GRANT ALL PRIVILEGES ON bookshop.* TO 'admin'@'%';
+-- Grant privileges to the RDS admin user (DO NOT use IDENTIFIED BY for existing users)
+-- GRANT ALL PRIVILEGES ON bookshop.* TO 'admin'@'%';
+-- FLUSH PRIVILEGES;
+
+-- CREATE USER 'devuser'@'%' IDENTIFIED BY 'devpassword';
+-- GRANT ALL PRIVILEGES ON bookshop.* TO 'devuser'@'%';
+-- FLUSH PRIVILEGES;
+
+ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'rootpassword';
 FLUSH PRIVILEGES;
 
-CREATE USER 'devuser'@'%' IDENTIFIED BY 'devpassword';
-GRANT ALL PRIVILEGES ON bookshop.* TO 'devuser'@'%';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'rootpassword' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 
 -- Create the `books` table if it does not exist
