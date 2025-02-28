@@ -34,7 +34,7 @@ services:
   db:
     image: mysql:8.0
     restart: always
-    platform: linux/arm64 
+    platform: linux/amd64
     environment:
 
       MYSQL_ROOT_PASSWORD: rootpassword  
