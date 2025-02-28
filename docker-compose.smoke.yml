@@ -33,6 +33,7 @@ services:
     volumes:
       - my-db:/var/lib/mysql
       - ./backend/init.sql:/docker-entrypoint-initdb.d/init.sql
+    command: --default-authentication-plugin=mysql_native_password
     # command: >
     #   bash -c "docker-entrypoint.sh mysqld & sleep 10 && 
     #   mysql -u root -prootpassword test < /docker-entrypoint-initdb.d/init.sql && wait"

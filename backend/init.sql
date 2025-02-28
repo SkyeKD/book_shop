@@ -6,6 +6,10 @@ Grant privileges to the RDS admin user (DO NOT use IDENTIFIED BY for existing us
 GRANT ALL PRIVILEGES ON bookshop.* TO 'admin'@'%';
 FLUSH PRIVILEGES;
 
+CREATE USER 'devuser'@'%' IDENTIFIED BY 'devpassword';
+GRANT ALL PRIVILEGES ON test.* TO 'devuser'@'%';
+FLUSH PRIVILEGES;
+
 -- Create the `books` table if it does not exist
 -- CREATE TABLE IF NOT EXISTS books (
 --     id INT AUTO_INCREMENT PRIMARY KEY,
