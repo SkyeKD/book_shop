@@ -2,9 +2,9 @@
 CREATE DATABASE IF NOT EXISTS bookshop;
 USE bookshop;
 
--- Grant privileges to the RDS admin user (DO NOT use IDENTIFIED BY for existing users)
--- GRANT ALL PRIVILEGES ON bookshop.* TO 'admin'@'%';
--- FLUSH PRIVILEGES;
+Grant privileges to the RDS admin user (DO NOT use IDENTIFIED BY for existing users)
+GRANT ALL PRIVILEGES ON bookshop.* TO 'admin'@'%';
+FLUSH PRIVILEGES;
 
 -- Create the `books` table if it does not exist
 -- CREATE TABLE IF NOT EXISTS books (
